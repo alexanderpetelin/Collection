@@ -1,17 +1,16 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
 import java.util.*;
 
 import java.util.Scanner;
-import java.io.FileNotFoundException;
 
 /**
  * Created by DnS on 06.09.2017.
  */
 public class RunCollection {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //task1();
+
+        createFile();
         task2();
     }
 
@@ -76,5 +75,15 @@ public class RunCollection {
             }
             System.out.println();
         }
+    }
+    static private void createFile() throws IOException {
+        FileWriter file = new FileWriter("Lesson3Task2.txt");
+        file.write("Иванов 8-923-111-11-11\n");
+        file.write("Петров 8-452-490-52-11\n");
+        file.write("Иванов 8-197-328-09-10\n");
+        file.write("Иванов 8-197-328-09-11\n");
+        file.write("Сидоров 8-987-123-65-47\n");
+        file.write("Петров 8-111-490-52-11");
+        file.close();
     }
 }
